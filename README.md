@@ -2,6 +2,8 @@
 
 REST API for managing a personal book library. Built with Fastify, TypeScript, PostgreSQL, and Drizzle ORM.
 
+https://github.com/user-attachments/assets/626cb3db-45d3-400a-bdbb-b7b0510579a1
+
 ## Stack
 
 - **Runtime:** Node.js 22+
@@ -90,6 +92,8 @@ PORT=3030
 | `PORT`         | No       | `3030`          | HTTP server port                     |
 
 ## API Endpoints
+
+<img width="1919" height="1079" alt="bookly-api-doc" src="https://github.com/user-attachments/assets/e72b0606-c213-4e25-a46b-6f799d846939" />
 
 ### GET /books
 
