@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --env-file .env dist/server.mjs",
+    "start": "node dist/server.mjs",
     "build": "tsdown",
     "dev": "tsx watch --env-file .env src/server.ts",
     "test": "dotenv -e .env vitest run",
