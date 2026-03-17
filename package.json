@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch --env-file .env src/server.ts",
+    "test": "dotenv -e .env vitest run",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:ui": "drizzle-kit studio",
+    "db:seed": "tsx --env-file .env src/infra/db/seed.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +25,7 @@
     "@types/supertest": "^7.2.0",
     "@vitest/coverage-v8": "^4.1.0",
     "ajv": "latest",
+    "dotenv-cli": "^11.0.0",
     "drizzle-kit": "^0.31.9",
     "drizzle-orm": "^0.45.1",
     "fastify": "^5.8.2",

@@ -9,13 +9,16 @@ import { fastifyCors } from "@fastify/cors";
 import { env } from "./env";
 import fastifySwagger from "@fastify/swagger";
 import scalarAPIReference from "@scalar/fastify-api-reference";
+import { getBooksRoute } from "./infra/http/get-books.route";
+import { addBookRoute } from "./infra/http/add-book.route";
+import { updateBookRoute } from "./infra/http/update-book.route";
+import { deleteBookRoute } from "./infra/http/delete-book.route";
 
 export const server = fastify().withTypeProvider<ZodTypeProvider>();
 
 server.register(fastifyCors, {
   origin: ["http://localhost:5173"],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  credentials: true,
 });
 
 server.setValidatorCompiler(validatorCompiler);
@@ -36,3 +39,8 @@ if (env.NODE_ENV === "development") {
     routePrefix: "/docs",
   });
 }
+
+server.register(getBooksRoute);
+server.register(addBookRoute);
+server.register(updateBookRoute);
+server.register(deleteBookRoute);
