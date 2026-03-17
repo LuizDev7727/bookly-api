@@ -17,7 +17,7 @@ import { deleteBookRoute } from "./infra/http/delete-book.route";
 export const server = fastify().withTypeProvider<ZodTypeProvider>();
 
 server.register(fastifyCors, {
-  origin: ["http://localhost:5173", "https://bookly-api-xb6s.onrender.com/"],
+  origin: ["http://localhost:5173", "https://bookly-kappa-nine.vercel.app"],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
 });
 
